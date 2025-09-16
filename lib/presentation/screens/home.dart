@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ojail_shopping/domain/entities/shopping_item_entity.dart';
-import 'package:ojail_shopping/domain/repositories/dummy.dart';
 import 'package:ojail_shopping/presentation/widgets/buttons/button.dart';
 import '../widgets/dialog/add_edit_item/add_edit_item_dialog.dart';
 import '../widgets/list/o_list_view.dart';
@@ -12,7 +10,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<ShoppingItemEntity> dummyData = Dummy.dummyData;
     String itemName = '';
     String qty = '';
     void openFormDialog() async {
@@ -43,7 +40,7 @@ class HomeScreen extends StatelessWidget {
           padding: const EdgeInsets.all(10.0),
           child: Column(
             children: [
-              Expanded(child: OListView(items: dummyData)),
+              Expanded(child: OListView()),
               SizedBox(height: 20),
               OButton('Open Dialog', onPressed: openFormDialog),
             ],
